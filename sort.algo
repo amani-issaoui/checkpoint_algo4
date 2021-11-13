@@ -1,0 +1,27 @@
+PROCEDURE insert (var tab: ARRAY)
+VAR
+ i,j,aux:INTEGER;
+ 
+BEGIN
+    FOR i FROM 1 TO tab.length-1; STEP 1  DO
+        aux:=tab[i];
+       j:=i;
+       WHILE (j>0 and tab[j-1]>aux) DO
+           tab[j]:=tab[j-1];
+           j:=j-1
+       END_WHILE
+       tab[j]:=aux;
+    END_FOR
+END
+ALGORITHM sort
+VAR
+ arr : ARRAY_OF INTEGER[10];
+ i:INTEGER;
+ 
+BEGIN
+ FOR i FROM 0 TO tab.length-1; STEP 1  DO
+ read(arr[i]);
+ END_FOR
+ insert(arr);
+
+END
